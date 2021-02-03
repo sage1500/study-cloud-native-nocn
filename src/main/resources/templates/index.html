@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{index.title}">Title</title>
+</head>
+
+<body>
+    <h1 th:text="#{index.title}"></h1>
+
+    <form th:action="@{/home}" method="get">
+        <button th:text="#{index.enter}">Enter</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{todo.update.complete.title}">Complete - Update TODO</title>
+    <link th:href="@{/css/content.css}" rel="stylesheet">
+</head>
+
+<body>
+    <h2 th:text="#{todo.update.complete.title}">Complete - Update TODO</h2>
+
+    <div class="complete">
+        <span th:text="${message}"></span>
+
+        <table th:object="${todoForm}">
+            <tr>
+                <td th:text="#{todo.common.id}">ID</td>
+                <td th:text="*{todoId}"></td>
+            </tr>
+            <tr>
+                <td th:text="#{todo.common.title}">件名</td>
+                <td th:text="*{todoTitle}"></td>
+            </tr>
+            <tr>
+                <td th:text="#{todo.common.version}">Version</td>
+                <td th:text="*{version}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <form th:action="@{/todo/}">
+        <button th:text="#{todo.common.return-to-list}">Return to list</button>
+    </form>
+</body>
+
+</html>

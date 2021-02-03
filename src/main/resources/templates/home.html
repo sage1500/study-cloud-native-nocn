@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{home.title}">Home</title>
+    <link th:href="@{/css/content.css}" rel="stylesheet">
+</head>
+
+<body>
+    <span th:text="${hello}"></span>
+    <form th:action="@{/logout}" method="post">
+        <button th:text="#{common.logout}">Logout</button>
+    </form>
+    <hr>
+    <h3>TODO</h3>
+    <a th:href="@{/todo/}" th:text="#{common.edit}">Edit</a>
+    <table class="todo-list">
+        <tr>
+            <th th:text="#{todo.common.title}">Title</th>
+        </tr>
+        <tr th:each="todo : ${todoList}">
+            <td th:text="${todo.todoTitle}">title1</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

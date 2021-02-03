@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{todo.update.confirm.title}">Confirm - Update TODO</title>
+    <link th:href="@{/css/content.css}" rel="stylesheet">
+</head>
+
+<body>
+    <h2 th:text="#{todo.update.confirm.title}">Confirm - Update TODO</h2>
+
+    <div class="confirm">
+        <span th:text="#{message.todo.update.confirm}"></span>
+
+        <table th:object="${todoForm}">
+            <tr>
+                <td th:text="#{todo.common.title}">Title</td>
+                <td th:text="*{todoTitle}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <form th:action="@{/todo/update/cancel}">
+        <button th:text="#{common.cancel}">Cancel</button>
+    </form>
+    <form th:action="@{/todo/update/input}" th:method="post">
+        <button th:text="#{todo.common.re-input}">Re input</button>
+    </form>
+    <form th:action="@{/todo/update/execute}" th:method="post">
+        <button th:text="#{todo.update.confirm.execute}">Execute</button>
+    </form>
+</body>
+
+</html>
