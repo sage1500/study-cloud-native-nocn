@@ -1,0 +1,33 @@
+spring.application.name: frontweb
+server.port: 8080
+spring.main.banner-mode: off
+
+## ログレベル
+logging.level:
+  "com.example": DEBUG
+
+## thymeleaf
+spring.thymeleaf.mode: HTML
+
+##
+spring.messages:
+  basename: i18n.messages
+#  cache-duration: -1
+
+## DataSource(Postgres)
+spring.datasource:
+  platform: postgresql
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/postgres
+  username: postgres
+  password: postgres
+
+## Flyway
+spring.flyway:
+  enabled: true
+  baseline-on-migrate: true
+#spring.flyway.url=${spring.datasource.url}
+#spring.flyway.schemas=public
+#spring.flyway.user=${spring.datasource.username}
+#spring.flyway.password=${spring.datasource.password}
+#spring.flyway.baseline-version=1.0.0

@@ -1,0 +1,22 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title th:title="#{todo.delete.complete.title}">Complete - Delete TODO</title>
+    <link th:href="@{/css/content.css}" rel="stylesheet">
+</head>
+
+<body>
+    <h2 th:title="#{todo.delete.complete.title}">Complete - Delete TODO</h2>
+
+    <div class="complete">
+        <span th:text="${message}"></span>
+    </div>
+
+    <form th:action="@{/todo/}">
+        <button th:text="#{todo.common.return-to-list}">Return to list</button>
+    </form>
+</body>
+
+</html>
